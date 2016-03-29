@@ -19,7 +19,7 @@ Protocol
 The protocol is a fixed length, CR terminated ASCI protocol for easy parsing
 easy manual control if needed.
 
-CXXXX<CR>
+CXXXX[CR]
 
 * C    = Command  [A-Z]
 * XXXX = Parameters [0-9, A-Z]
@@ -35,7 +35,7 @@ Baud rate is 9600, 8 bits, 1 stop bit.
 ### ERROR RESPONSE
 
 If any command was not understood the response is
-Response: EXXXX<CR> XXXX error code.
+Response: EXXXX[CR] XXXX error code.
 
 Error codes:
 
@@ -47,17 +47,17 @@ Error codes:
 
 ### GETVERSION
 
-Request: V0000<CR> 
+Request: V0000[CR] 
 
-Response: VHHLL<CR>  answers with version of firmware.
+Response: VHHLL[CR]  answers with version of firmware.
 
 ### DDR
 
 Set direction and polarity.
 
-Request: DXYYZ<CR> X = [A (analog pins), D(digital pins)]. YY is pin number. Z is the polarity and mode or ? to request current mode.
+Request: DXYYZ[CR] X = [A (analog pins), D(digital pins)]. YY is pin number. Z is the polarity and mode or ? to request current mode.
 
-Response: DXYYZ<CR> echos request or error code 0002.
+Response: DXYYZ[CR] echos request or error code 0002.
 
 Available modes
 
@@ -70,15 +70,15 @@ Available modes
 
 ### DEBOUNCE
 
-Request: BXXXX<CR> X = debounce value, if X is all ? it returns the current debounce value.
+Request: BXXXX[CR] X = debounce value, if X is all ? it returns the current debounce value.
 
-Answer: BXXXX<CR>
+Answer: BXXXX[CR]
 
 ### PIN
 
-Request: PXYYZ<CR> X = [A (analog pins), D(digital pins)]. YY is pin number. Z is 0, 1 or ?. ? requests current state without changing.
+Request: PXYYZ[CR] X = [A (analog pins), D(digital pins)]. YY is pin number. Z is 0, 1 or ?. ? requests current state without changing.
 
-Response: PXYYZ<CR>, echos first part adds Z which is 1 if pin is high, zero if pin is low.
+Response: PXYYZ[CR], echos first part adds Z which is 1 if pin is high, zero if pin is low.
 
 ### PIN NOTIFICATION
 
@@ -88,4 +88,4 @@ Notification: NXYYZ, X = [A,D], Y = pin number, Z = level
 ### RESET
 
 Reset configuration to factory defaults.
-R0000<CR>
+R0000[CR]
