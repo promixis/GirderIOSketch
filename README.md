@@ -1,7 +1,7 @@
 Girder 6 IO Sketch
 ==================
 This code allows an Arduino compatible device to function as
-a cheap input output device for Girder 6.
+a cheap input output device for [Girder 6](www.promixis.com/girder.php). 
 
 License
 -------
@@ -12,6 +12,12 @@ Usage
 -----
 All but the serial ports can be configured as input/outputs by using the
 serial protocol. Events are generated when a level changes.
+
+Inside Girder enable the Simple Transport plugin and press the "Import from Web..." 
+button. There find the "Promixis/GirderIOSketch" template. Download and
+enable it for your correct comport. Events should now come in when you pull one of the inputs down
+to ground.
+
 
 Protocol
 --------
